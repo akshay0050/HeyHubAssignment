@@ -37,7 +37,8 @@ class _MyHomePageState extends State<MyHomePage> {
   final _formKey = GlobalKey<FormState>();
   final _latController = TextEditingController();
   final _longController = TextEditingController();
-  final _accuracyController = TextEditingController();
+  final _accuracyController = TextEditingController(text: "0");
+
   String msgText = "";
   bool _isMsgToShow = false;
   List<dynamic> polyPoints;
@@ -141,7 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Container(
       padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
       child: TextFormField(
-        maxLength: 6,
+        maxLength: 12,
         keyboardType: TextInputType.phone,
         controller: _accuracyController,
         validator: _validateAccuracy,
